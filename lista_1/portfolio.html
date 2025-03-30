@@ -13,7 +13,64 @@
 
     <body>
         <header>
-            <a href="./menu.html">Natalia Wolniewicz</a>
+            <a href="./menu.html">
+                <h1 class="title">Natalia Wolniewicz</h1>
+            </a>
         </header>
+
+        <main class="content">
+            <section class="window project">
+                <h2 class="heading portfolio">Compiler</h2>
+                <a href="https://github.com/dorithegreat/JFTT-kompilator" class="link">https://github.com/dorithegreat/JFTT-kompilator</a>
+                <p>Compiler of a simple imperative language, written in Python using the PLY library. Written as a part of a class.</p>
+
+                <pre>
+                    <code>
+def generate_procedures(self, procedures : nd.Procedures):
+    inner_code = []
+    offset = self.offset + 1
+
+    for proc in procedures.procedures:
+        self.symbols.add_procedure(proc.proc_head.pid, offset)
+        inner_code += self.generate_procedure(proc)
+        offset = self.offset +  len(inner_code) + 1
+    return inner_code
+                            
+                    </code>
+                </pre>
+            </section>
+            <section class="window project">
+                <h2 class="heading portfolio">Hand Gesture Recognition</h2>
+                <a href="https://github.com/dorithegreat/Programowanie-Zespo-owe" class="link">https://github.com/dorithegreat/Programowanie-Zespo-owe</a>
+                <p>A machine learning model which recognizes various hand gestures, created with the TensorFlow library as a part of a bigger group project.</p>
+
+                <pre>
+                    <code>
+def main():
+    csv_file = os.path.join("..", "..", "gestures", "data.csv")
+
+    if not os.path.exists(csv_file):
+        raise FileNotFoundError(f"Ścieżka {csv_file} jest nie poprawna.")
+
+    X, y, label_encoder = load_and_preprocess_data(csv_file)
+
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+    input_shape = X_train.shape[1]
+    num_classes = len(np.unique(y))
+    model = build_model(input_shape, num_classes)
+
+    # amount of epochs to change
+    history = model.fit(X_train, y_train, epochs=100, batch_size=32, validation_split=0.2)
+
+    loss, accuracy = model.evaluate(X_test, y_test)
+    print(f"Test Accuracy: {accuracy:.2f}")
+
+    model.save("gesture_recognition_model.keras")
+    np.save("label_encoder_classes.npy", label_encoder.classes_)
+                    </code>
+                </pre>
+            </section>
+        </main>
     </body>
 </html>
