@@ -1,0 +1,139 @@
+@import 'variables';
+@import 'mixins';
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: $font-stack;
+    background-color: $white;
+    color: $text-color;
+    line-height: 1.6;
+    padding: 1em;
+}
+
+h1, h2, h3, h4, h5, h6, p, a {
+    margin-bottom: 1em;
+    color: $text-color;
+}
+
+h1 {
+    text-align: center;
+    font-size: clamp(2rem, 5vw, 3rem);
+}
+
+a {
+    text-decoration: none;
+    color: $text-color;
+}
+
+#menu {
+    display: grid;
+    gap: 1.5em;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    margin-top: 2em;
+    justify-items: center;
+}
+
+.info {
+    @include theme();
+}
+
+.window{
+    @include theme();
+    margin: 2em auto;
+    width: 100%;
+    max-width: 90vw;
+    overflow: auto;
+}
+
+pre, code {
+    @include theme();
+    overflow: auto;
+    display: block;
+    font-family: monospace;
+    color: $primary-color;
+}
+
+
+
+.card {
+    @include headers();
+    border-radius: 25px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    max-width: 400px;
+
+    :hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+
+    p {
+        text-align: center;
+        font-size: 1.1rem;
+    }
+}
+
+header {
+    @include headers();
+    margin-bottom: 2em;
+    border-radius: 25px;
+}
+
+img, .me {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    display: block;
+    margin: 1em auto;
+}
+
+.informationWraper {
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+}
+
+.info {
+    background-color: $background-color;
+    border-radius: 10px;
+    padding: 1em;
+
+    p {
+        color: $text-color;
+    }
+}
+
+.window {
+    background-color: $background-color;
+    border-radius: 25px;
+    padding: 2em;
+    margin: 2em auto;
+    width: 100%;
+    max-width: 90vw;
+    overflow: auto;
+}
+
+@media (max-width: 768px) {
+    .card {
+        padding: 1em;
+    }
+
+    .informationWraper {
+        padding: 0.5em;
+    }
+
+    .window {
+        padding: 1em;
+    }
+}
+
+.heading {
+    @extend h2;
+    text-align: center;
+}

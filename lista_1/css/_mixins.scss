@@ -1,0 +1,12 @@
+@mixin theme {
+    background: $background-color;
+    border-radius: 5px;
+    padding: 0.5em;
+}
+
+@mixin headers {
+    background-color: $secondary-color;
+    color: $text-color;
+    text-align: center;
+    padding: 1.5em;
+}
