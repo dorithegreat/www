@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Hangman</title>
+        <style>
+            @import url('./styles/normalize.css');
+            @import url('hangman.css');
+        </style>
+    </head>
+    <body>
+         <header>
+
+         </header>
+         <main class="game">
+            <div id="letter-container" class="letter-container"></div>
+            <div id="user-input-section"></div>
+            <canvas id="canvas"></canvas>
+            <button id="restart-game-button">Restart Game</button>
+            <div id="new-game-container" class="new-game-popup hide">
+               <div id="result-text"></div>
+               <button id="new-game-button">New Game</button>
+            </div>
+         </main>
+         <script src="menu.js"></script>
+         <script src="hangman.js"></script>
+    </body>
+</html>
